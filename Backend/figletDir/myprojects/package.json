@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikhil Patel",
+  "license": "ISC",
+  "dependencies": {
+    "a": "^4.0.0",
+    "give": "^2.0.0",
+    "give-me-a-joke": "^0.5.1",
+    "joke": "^0.0.1-1",
+    "me": "^0.3.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Post</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Create New Post</h1>
+
+<form action="/posts" method="POST" enctype="multipart/form-data" class="form-container">
+  <textarea name="content" placeholder="Write something..." required></textarea>
+  <input type="file" name="photo" accept="image/*">
+  <button type="submit">Post</button>
+</form>
+</body>
+</html>

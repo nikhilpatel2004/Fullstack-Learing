@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Instagram</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="mobile-wrapper">
+  <div class="instagram-ui">
+    <section class="profile-header">
+      <img src="<%= user.dp %>" class="dp">
+      <div class="user-info">
+        <h2>@<%= user.username %></h2>
+        <div class="stats">
+          <span><strong><%= posts.length %></strong><br>Posts</span>
+          <span><strong><%= user.followers %></strong><br>Followers</span>
+          <span><strong><%= user.following %></strong><br>Following</span>
+        </div>
+      </div>
+      <form action="/profile/dp" method="POST" enctype="multipart/form-data">
+        <input type="file" name="dp" accept="image/*">
+        <button>Change Profile Pic</button>
+      </form>
+      <form action="/follow" method="POST">
+        <button name="action" value="<%= user.followers ? 'unfollow' : 'follow' %>">
+          <%= user.followers ? 'Unfollow' : 'Follow' %>
+        </button>
+      </form>
+    </section>
+
+    <section class="posts-grid">
+      <% posts.forEach(post => { %>
+        <div class="grid-item">
+          <a href="/posts/<%= post.id %>">
+            <% if(post.photo) { %>
+              <img src="<%= post.photo %>">
+            <% } else { %>
+              <div class="no-photo"><%= post.content %></div>
+            <% } %>
+          </a>
+        </div>
+      <% }) %>
+    </section>
+    <a href="/posts/new" class="new-post-btn">+</a>
+  </div>
+</body>
+</html>
